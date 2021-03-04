@@ -1,11 +1,11 @@
-# import sys
-# print('Hello from Python!')
-# sys.stdout.flush()
+import sys 
 
-import time
+from csv import writer 
 
-i = 0
-while True:
-    print(i, flush=True)
-    i+=1
-    time.sleep(1)
+
+with open('progress.csv', 'w') as csv_file: 
+  csv_writer = writer(csv_file) 
+  headers = ['Name', 'Score'] 
+  csv_writer.writerow(headers) 
+  
+print("csv file created for leetcode") 
